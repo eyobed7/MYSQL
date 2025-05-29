@@ -106,6 +106,7 @@ DELETE FROM Customers
 WHERE CustomerID = 1;
 ```
 ---
+
 Create a new table:
 
 Create a new table called “Orders” with columns for OrderID (primary key), CustomerID (foreign key referencing the Students table), OrderDate, and Total.
@@ -122,3 +123,7 @@ Update the Total column for a specific order.
 Delete data from the Orders table:
 
 Delete an order with a specific OrderID.
+
+Additional Resources
+[Crud](https://milnepublishing.geneseo.edu/themissinglink/chapter/chapter-41-mysql-crud-action/)
+[Crud operation](https://retool.com/blog/crud-operations-sql)
