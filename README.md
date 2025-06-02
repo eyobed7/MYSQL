@@ -223,3 +223,78 @@ mycursor.close()
 mydb.close()
 
 ```
+# Syntax
+
+# 📘 MySQL CRUD Syntax & Examples: `students` Table
+
+This document provides SQL syntax and example queries for performing **CRUD operations** on a `students` table.
+
+---
+
+## 🗂️ Table Structure: `students`
+
+| Column Name | Data Type                      | Constraints                    | Description                        |
+|-------------|-------------------------------|--------------------------------|------------------------------------|
+| id          | INT                            | PRIMARY KEY, AUTO_INCREMENT    | Unique ID for each student         |
+| first_name  | VARCHAR(50)                    | NOT NULL                       | Student's first name               |
+| last_name   | VARCHAR(50)                    | NOT NULL                       | Student's last name                |
+| age         | INT                            | NOT NULL                       | Student's age                      |
+| gender      | ENUM('Male','Female','Other') | NOT NULL                       | Student's gender                   |
+| email       | VARCHAR(100)                   | UNIQUE, NOT NULL               | Student's email address            |
+| created_at  | TIMESTAMP                      | DEFAULT CURRENT_TIMESTAMP      | Record creation timestamp          |
+
+---
+
+## 🛠️ 1. CREATE TABLE
+
+```sql
+CREATE TABLE students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    age INT NOT NULL,
+    gender ENUM('Male', 'Female', 'Other') NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+---
+## 2. INSERT DATA
+
+```mysql
+INSERT INTO students (first_name, last_name, age, gender, email)
+VALUES
+('John', 'Doe', 21, 'Male', 'john.doe@example.com'),
+('Jane', 'Smith', 19, 'Female', 'jane.smith@example.com'),
+('Ali', 'Yusuf', 22, 'Male', 'ali.yusuf@example.com'),
+('Liya', 'Amanuel', 18, 'Female', 'liya.amanuel@example.com'),
+('Musa', 'Kemal', 25, 'Other', 'musa.kemal@example.com');
+```
+---
+## 🔍 3. READ (SELECT) DATA
+
+```mysql
+SELECT * FROM students;
+```
+Select specific columns:
+
+```mysql
+SELECT first_name, age FROM students;
+```
+## ✏️ 4. UPDATE DATA
+Update email where ID is 2:
+
+```mysql
+UPDATE students
+SET email = 'new.email@example.com'
+WHERE id = 2;
+```
+## ❌ 5. DELETE DATA
+Delete student with ID 3:
+```mysql
+DELETE FROM students
+WHERE id = 3;
+```
+
+
+
